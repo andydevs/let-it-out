@@ -1,0 +1,23 @@
+{
+  "name": "shout",
+  "version": "1.0.0",
+  "description": "A UI where you can write your words down and watch them fade away, dissappearing from your mind.",
+  "main": "webpack.config.js",
+  "scripts": {
+    "webpack": "./node_modules/.bin/webpack --progress --watch"
+  },
+  "keywords": [
+    "anger",
+    "frustration",
+    "stress"
+  ],
+  "author": "Anshul Kharbanda",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^3.6.0"
+  }
+}
