@@ -17,7 +17,7 @@ const FADE_DELAY = 120000
 const FADE_TIME = 2000
 
 // Word information
-const WCHARS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ?!.,;"\'()[]{}'.split('')
+const WCHARS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ?!.,;"\'()[]{}'.split('')
 const WDELIM = [' ', 'Enter', 'Tab']
 const WRESET = ['Backspace']
 
