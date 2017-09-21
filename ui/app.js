@@ -21,7 +21,7 @@ const FADE_TIME = 2000
 const DONATE_DELAY = 240000
 
 // Word information
-const WCHARS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ?!.,;"\'()[]{}'.split('')
+const WCHARS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=\\/><.,;:~`"\'()[]{}'.split('')
 const WDELIM = [' ', 'Enter', 'Tab']
 const WRESET = ['Backspace']
 
