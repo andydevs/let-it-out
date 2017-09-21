@@ -18,7 +18,8 @@ const FADE_TIME = 2000
 
 // Word information
 const WCHARS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ?!.,;"\'()[]{}'.split('')
-const WDELIM = [' ', 'Enter', 'Tab', 'Backspace']
+const WDELIM = [' ', 'Enter', 'Tab']
+const WRESET = ['Backspace']
 
 // Current word
 var $word = null
@@ -54,6 +55,16 @@ function fadeAway() {
     $word = null
 }
 
+/**
+ * Quickly fades the word (deleting an error)
+ */
+function quickFade() {
+    // Add a space
+    // Quick fade effect
+    $word.fadeOut(FADE_TIME)
+    $word = null
+}
+
 // Add handlers
 $(() => {
     // Set keydown handler
@@ -62,7 +73,8 @@ $(() => {
         if ($word === null) newWord()
         // Add characters to the word
         if (_.includes(WCHARS, event.key)) add(event.key)
-        // Fade the word if a terminated character is added
-        if (_.includes(WDELIM, event.key)) fadeAway()
+        // Fade the word if a terminator character is typed
+        if (_.includes(WRESET, event.key)) quickFade()
+        else if (_.includes(WDELIM, event.key)) fadeAway()
     })
 })
