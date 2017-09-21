@@ -8,6 +8,7 @@
  * Created: 9 - 21 - 2017
  */
 // Imports
+import $ from 'jquery'
 import _ from 'lodash'
 import './style.css'
 
@@ -40,8 +41,8 @@ function add(char) {
 }
 
 /**
- * Releases the current word from it's grip on your heart and lets it
- * fade away into the light, never to be thought of again...
+ * Releases the current word from it's grip on your heart and lets
+ * it fade away into the light, never to be thought of again...
  */
 function fadeAway() {
     // Add a space

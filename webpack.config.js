@@ -4,10 +4,10 @@ var path = require('path')
 
 // Exports
 module.exports = {
-    entry: './src/app.js',
+    entry: './ui/app.js',
     output: {
         filename: 'bundle.js',
-        path: path.join(__dirname, 'build')
+        path: path.join(__dirname, 'build/ui')
     },
     module: {
         rules: [
@@ -24,11 +24,5 @@ module.exports = {
                 use: ['style-loader', 'css-loader']
             }
         ]
-    },
-    plugins: [
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery'
-        })
-    ]
+    }
 }

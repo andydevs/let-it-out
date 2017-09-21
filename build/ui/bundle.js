@@ -68,7 +68,11 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function($) {
+
+
+var _jquery = __webpack_require__(1);
+
+var _jquery2 = _interopRequireDefault(_jquery);
 
 var _lodash = __webpack_require__(2);
 
@@ -79,17 +83,17 @@ __webpack_require__(5);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Fade information
-/**
- * Shout
- *
- * A UI where you can write your words down and watch them fade away,
- * dissappearing from your mind.
- *
- * Author:  Anshul Kharbanda
- * Created: 9 - 21 - 2017
- */
+var FADE_DELAY = 120000; /**
+                          * Shout
+                          *
+                          * A UI where you can write your words down and watch them fade away,
+                          * dissappearing from your mind.
+                          *
+                          * Author:  Anshul Kharbanda
+                          * Created: 9 - 21 - 2017
+                          */
 // Imports
-var FADE_DELAY = 120000;
+
 var FADE_TIME = 2000;
 
 // Word information
@@ -103,8 +107,8 @@ var $word = null;
  * Creates a new word and adds it to the app
  */
 function newWord() {
-    $word = $('<span class="word"></span>');
-    $('#app').append($word);
+    $word = (0, _jquery2.default)('<span class="word"></span>');
+    (0, _jquery2.default)('#app').append($word);
 }
 
 /**
@@ -119,8 +123,8 @@ function add(char) {
 }
 
 /**
- * Releases the current word from it's grip on your heart and lets it
- * fade away into the light, never to be thought of again...
+ * Releases the current word from it's grip on your heart and lets
+ * it fade away into the light, never to be thought of again...
  */
 function fadeAway() {
     // Add a space
@@ -132,9 +136,9 @@ function fadeAway() {
 }
 
 // Add handlers
-$(function () {
+(0, _jquery2.default)(function () {
     // Set keydown handler
-    $(document).keydown(function (event) {
+    (0, _jquery2.default)(document).keydown(function (event) {
         // Create a word if word is not created
         if ($word === null) newWord();
         // Add characters to the word
@@ -143,7 +147,6 @@ $(function () {
         if (_lodash2.default.includes(WDELIM, event.key)) fadeAway();
     });
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 1 */

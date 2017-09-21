@@ -2,9 +2,12 @@
   "name": "shout",
   "version": "1.0.0",
   "description": "A UI where you can write your words down and watch them fade away, dissappearing from your mind.",
-  "main": "webpack.config.js",
+  "main": "build/index.js",
   "scripts": {
-    "webpack": "./node_modules/.bin/webpack --progress --watch"
+    "build_ui": "./node_modules/.bin/webpack --progress",
+    "build_server": "./node_modules/.bin/babel server --out-dir build",
+    "build": "npm run build_server && npm run build_ui",
+    "start": "node build/index.js"
   },
   "keywords": [
     "anger",
@@ -22,6 +25,7 @@
     "webpack": "^3.6.0"
   },
   "dependencies": {
+    "express": "^4.15.4",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4"
   }
