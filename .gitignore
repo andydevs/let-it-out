@@ -58,7 +58,7 @@ typings/
 .env
 
 # Remove build directory
-build/
+build/*
 !build/ui
-build/ui/
+build/ui/*
 !build/ui/index.html
