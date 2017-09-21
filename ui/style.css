@@ -9,7 +9,7 @@
     font-family: "Consolas", "Arial", sans-serif;
 }
 
-.donate {
+#donate {
     position: fixed;
     display: none;
     bottom: 10pt;
@@ -20,6 +20,6 @@
     background-color: rgba(245, 245, 245, 0.5);
     color: black;
 }
-.donate:hover {
+#donate:hover {
     background-color: rgba(235, 235, 235, 1);
 }

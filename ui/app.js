@@ -87,7 +87,7 @@ $(() => {
     // Reveal the donate button after a while
     setTimeout(() => {
         // Create donate button
-        $donate = $('<a href="'+CHARITY+'" class="donate">Donate</a>')
+        $donate = $('<a href="'+CHARITY+'" id="donate">Donate</a>')
         // Append to app and fade in
         $('#app').append($donate)
         $donate.fadeIn(FADE_TIME)
