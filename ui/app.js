@@ -12,17 +12,22 @@ import $ from 'jquery'
 import _ from 'lodash'
 import './style.css'
 
-// Fade information
+// Charity url
+const CHARITY = 'https://donatenow.networkforgood.org/adaa?code=Home'
+
+// Timing information
 const FADE_DELAY = 120000
 const FADE_TIME = 2000
+const DONATE_DELAY = 240000
 
 // Word information
 const WCHARS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ?!.,;"\'()[]{}'.split('')
 const WDELIM = [' ', 'Enter', 'Tab']
 const WRESET = ['Backspace']
 
-// Current word
+// Buffers for objects in the scene
 var $word = null
+var $donate = null
 
 /**
  * Creates a new word and adds it to the app
@@ -78,4 +83,13 @@ $(() => {
         if (_.includes(WRESET, event.key)) quickFade()
         else if (_.includes(WDELIM, event.key)) fadeAway()
     })
+
+    // Reveal the donate button after a while
+    setTimeout(() => {
+        // Create donate button
+        $donate = $('<a href="'+CHARITY+'" class="donate">Donate</a>')
+        // Append to app and fade in
+        $('#app').append($donate)
+        $donate.fadeIn(FADE_TIME)
+    }, DONATE_DELAY)
 })

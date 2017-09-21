@@ -8,3 +8,18 @@
     padding: 10pt;
     font-family: "Consolas", "Arial", sans-serif;
 }
+
+.donate {
+    position: fixed;
+    display: none;
+    bottom: 10pt;
+    right: 10pt;
+    text-decoration: none;
+    padding: 5pt 10pt;
+    border-radius: 5pt;
+    background-color: rgba(245, 245, 245, 0.5);
+    color: black;
+}
+.donate:hover {
+    background-color: rgba(235, 235, 235, 1);
+}
