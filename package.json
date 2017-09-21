@@ -1,7 +1,7 @@
 {
   "name": "shout",
   "version": "1.0.0",
-  "description": "A UI where you can write your words down and watch them fade away, dissappearing from your mind.",
+  "description": "A UI where you can write your words down and watch them fade away, disappearing from your mind.",
   "main": "build/index.js",
   "scripts": {
     "build_ui": "./node_modules/.bin/webpack --progress",
