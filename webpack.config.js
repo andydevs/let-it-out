@@ -1,4 +1,5 @@
 // Imports
+var webpack = require('webpack')
 var path = require('path')
 
 // Exports
@@ -9,15 +10,25 @@ module.exports = {
         path: path.join(__dirname, 'build')
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /.jsx?$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
-                    presets: ['env', 'react']
+                    presets: ['env']
                 }
+            },
+            {
+                test: /.css$/,
+                use: ['style-loader', 'css-loader']
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery'
+        })
+    ]
 }
