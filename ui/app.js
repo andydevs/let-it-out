@@ -60,6 +60,7 @@ function fadeAway() {
  */
 function quickFade() {
     // Add a space
+    add(' ')
     // Quick fade effect
     $word.fadeOut(FADE_TIME)
     $word = null
