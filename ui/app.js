@@ -21,9 +21,8 @@ const FADE_TIME = 2000
 const DONATE_DELAY = 240000
 
 // Word information
-const WCHARS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=\\/><.,;:~`"\'()[]{}'.split('')
-const WDELIM = [' ', 'Enter', 'Tab']
-const WRESET = ['Backspace']
+const WCHARS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?@#$%^&*()_+-=\\/><.,;:~`"\'()[]{}'.split('')
+const WDELIM = [' ', 'Enter', 'Tab', 'Backspace']
 
 // Buffers for objects in the scene
 var $word = null
@@ -60,17 +59,6 @@ function fadeAway() {
     $word = null
 }
 
-/**
- * Quickly fades the word (deleting an error)
- */
-function quickFade() {
-    // Add a space
-    add(' ')
-    // Quick fade effect
-    $word.fadeOut(FADE_TIME)
-    $word = null
-}
-
 // Add handlers
 $(() => {
     // Set keydown handler
@@ -80,8 +68,7 @@ $(() => {
         // Add characters to the word
         if (_.includes(WCHARS, event.key)) add(event.key)
         // Fade the word if a terminator character is typed
-        if (_.includes(WRESET, event.key)) quickFade()
-        else if (_.includes(WDELIM, event.key)) fadeAway()
+        if (_.includes(WDELIM, event.key)) fadeAway()
     })
 
     // Reveal the donate button after a while
