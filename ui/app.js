@@ -29,7 +29,7 @@ var $donate = null
 
 // Add handlers
 $(() => {
-    // Set keydown handler
+    // Set document keydown handler
     $(document).on('keydown', (event) => {
         if (_.includes(CHARS, event.key))
             $('#app').trigger('writechar', [event.key])
@@ -37,7 +37,7 @@ $(() => {
             $('#app').trigger('backspace')
     })
 
-    // Set writechar handler
+    // Set writechar handler for app
     $('#app').on('writechar', (event, chr) => {
         $('#app').append(
             $(`<span class="char">${chr}</span>`)
@@ -46,7 +46,7 @@ $(() => {
         )
     })
 
-    // Set backspace handler
+    // Set backspace handler for app
     $('#app').on('backspace', (event) => {
         $('#app > .char:last-of-type').remove()
     })
