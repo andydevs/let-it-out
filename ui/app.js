@@ -16,9 +16,10 @@ import './style.css'
 const CHARITY = 'https://donatenow.networkforgood.org/adaa?code=Home'
 
 // Timing information
-const FADE_DELAY = 120000
+const FADE_DELAY = 1800000
 const FADE_TIME = 2000
-const DONATE_DELAY = 240000
+const QUICK_FADE_TIME = 500
+const DONATE_DELAY = 3600000
 
 // Word information
 const WCHARS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?@#$%^&*()_+-=\\/><.,;:~`"\'()[]{}'.split('')
@@ -67,7 +68,7 @@ function quickFade() {
     // Add a space
     add(' ')
     // Quick fade effect
-    $word.fadeOut(FADE_TIME)
+    $word.fadeOut(QUICK_FADE_TIME)
     $word = null
 }
 
