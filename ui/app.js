@@ -18,7 +18,7 @@ const CHARITY = 'https://donatenow.networkforgood.org/adaa?code=Home'
 // Timing information
 const FADE_DELAY = 180000
 const FADE_TIME  = 2000
-const DONATE_DELAY = 3600
+const DONATE_DELAY = 360000
 
 // Word information
 const CHARS = ' 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?@#$%^&*()_+-=\\/><.,;:~`"\'()[]{}'.split('')
