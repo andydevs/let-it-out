@@ -28,7 +28,7 @@ const BCKSP = 'Backspace'
 var $donate = null
 
 // Add handlers
-$(() => {
+$(document).ready(() => {
     // Set document keydown handler
     $(document).on('keydown', (event) => {
         if (_.includes(CHARS, event.key))
