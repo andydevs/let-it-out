@@ -16,13 +16,18 @@
     left: 0;
     right: 0;
     z-index: 1;
-    padding: 10pt;
+    padding: 5pt;
     text-align: right;
 }
 
 .button {
     margin: 5pt;
+    padding: 10pt;
+    border-radius: 50%;
+    display: inline-block;
     background-image: url('resources/test.svg');
     background-repeat: no-repeat;
-    background-color: #cccccc;
+    background-position: center;
+    background-size: 60% 60%;
+    background-color: #ccc;
 }
