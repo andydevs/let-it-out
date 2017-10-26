@@ -10,17 +10,19 @@
     font-family: "Consolas", "Arial", sans-serif;
 }
 
-#donate {
-    position: fixed;
-    display: none;
-    bottom: 10pt;
-    right: 20pt;
-    text-decoration: none;
-    padding: 5pt 10pt;
-    border-radius: 5pt;
-    background-color: rgba(245, 245, 245, 0.5);
-    color: black;
+#app > #toolbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    padding: 10pt;
+    text-align: right;
 }
-#donate:hover {
-    background-color: rgba(235, 235, 235, 1);
+
+.button {
+    margin: 5pt;
+    background-image: url('resources/test.svg');
+    background-repeat: no-repeat;
+    background-color: #cccccc;
 }

@@ -4,6 +4,7 @@
   "description": "A UI where you can write your words down and watch them fade away, disappearing from your mind.",
   "main": "build/index.js",
   "scripts": {
+    "develop_ui": "./node_modules/.bin/webpack --progress --watch",
     "build_ui": "./node_modules/.bin/webpack --progress",
     "build_server": "./node_modules/.bin/babel server --out-dir build",
     "build": "npm run build_server && npm run build_ui",
@@ -24,6 +25,7 @@
     "babel-preset-env": "^1.6.0",
     "css-loader": "^0.28.7",
     "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
     "webpack": "^3.6.0"
   },
   "dependencies": {

@@ -12,20 +12,13 @@ import $ from 'jquery'
 import _ from 'lodash'
 import './style.css'
 
-// Charity url
-const CHARITY = 'https://donatenow.networkforgood.org/adaa?code=Home'
-
 // Timing information
 const FADE_DELAY = 180000
 const FADE_TIME  = 2000
-const DONATE_DELAY = 360000
 
 // Word information
 const CHARS = ' 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!?@#$%^&*()_+-=\\/><.,;:~`"\'()[]{}'.split('')
 const BCKSP = 'Backspace'
-
-// Buffers for objects in the scene
-var $donate = null
 
 // Add handlers
 $(document).ready(() => {
@@ -51,13 +44,10 @@ $(document).ready(() => {
         $('#app > .char:last-of-type').remove()
     })
 
-    // Reveal the donate button after a while
-    setTimeout(() => {
-        // Create donate
-        $donate = $('<a href="'+CHARITY+'" id="donate">Donate</a>')
-
-        // Append donate to app and fade in
-        $('#app').append($donate)
-        $donate.fadeIn(FADE_TIME)
-    }, DONATE_DELAY)
+    // Append toolbar
+    $('#app').append(
+        $('<div id="toolbar"></div>')
+            .append('<span class="button" id="button-darkmode"></span>')
+            .append('<span class="button" id="button-clear"></span>')
+    )
 })
