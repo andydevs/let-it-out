@@ -65,4 +65,10 @@ $(document).ready(() => {
         console.log('#button-clear pressed')
         $('#app').trigger('clear')
     })
+    $('#button-darkmode').on('click', (event) => {
+        console.log('#button-darkmode pressed')
+        $('#app').toggleClass('darkmode')
+        $('#button-darkmode').toggleClass('darkmode')
+        $('#button-clear').toggleClass('darkmode')
+    })
 })

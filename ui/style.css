@@ -1,3 +1,4 @@
+/* Main App */
 #app {
     position: fixed;
     top: 0;
@@ -7,9 +8,10 @@
     overflow-y: scroll;
     overflow-wrap: normal;
     padding: 10pt;
-    font-family: "Consolas", "Arial", sans-serif;
-}
-
+    font-family: "Consolas", "Arial", sans-serif; }
+#app.darkmode {
+    background-color: black;
+    color: white; }
 #app > #toolbar {
     position: absolute;
     bottom: 0;
@@ -17,9 +19,9 @@
     right: 0;
     z-index: 1;
     padding: 5pt;
-    text-align: right;
-}
+    text-align: right; }
 
+/* Buttons */
 .button {
     margin: 5pt;
     padding: 10pt;
@@ -29,15 +31,23 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60% 60%;
-    background-color: #eee;
-}
+    background-color: #eee; }
 .button:hover { background-color: #ccc; }
 .button:active { background-color: #999; }
+.button.darkmode {
+    background-image: url('resources/test-white.svg');
+    background-color: #333; }
+.button.darkmode:hover { background-color: #555; }
+.button.darkmode:active { background-color: #999; }
 
+/* Darkmode button */
 #button-darkmode {
-    background-image: url('resources/moon-phase-outline.svg');
-}
+    background-image: url('resources/moon-phase-outline.svg'); }
+#button-darkmode.darkmode {
+    background-image: url('resources/moon-phase-outline-white.svg'); }
 
+/* Clear button */
 #button-clear {
-    background-image: url('resources/refresh-button.svg');
-}
+    background-image: url('resources/refresh-button.svg'); }
+#button-clear.darkmode {
+    background-image: url('resources/refresh-button-white.svg'); }
