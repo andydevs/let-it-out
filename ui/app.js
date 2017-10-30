@@ -1,5 +1,5 @@
 /**
- * Shout
+ * Let It Out
  *
  * A UI where you can write your words down and watch them fade away,
  * dissappearing from your mind.

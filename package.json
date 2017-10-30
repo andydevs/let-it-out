@@ -1,5 +1,5 @@
 {
-  "name": "shout",
+  "name": "let-it-out",
   "version": "1.0.0",
   "description": "A UI where you can write your words down and watch them fade away, disappearing from your mind.",
   "main": "build/index.js",

@@ -1,3 +1,12 @@
+/**
+ * Let It Out
+ *
+ * A UI where you can write your words down and watch them fade away,
+ * dissappearing from your mind.
+ *
+ * Author:  Anshul Kharbanda
+ * Created: 9 - 21 - 2017
+ */
 // Imports
 var webpack = require('webpack')
 var path = require('path')
