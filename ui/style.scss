@@ -1,0 +1,73 @@
+/**
+ * Let It Out
+ *
+ * A UI where you can write your words down and watch them fade away,
+ * dissappearing from your mind.
+ *
+ * Author:  Anshul Kharbanda
+ * Created: 9 - 21 - 2017
+ */
+#app {
+    // Main stuff
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    overflow-wrap: normal;
+    padding: 10pt;
+    font-family: "Consolas", "Arial", sans-serif;
+    transition: 0.2s ease-in-out;
+
+    // Toolbar
+    > #toolbar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        padding: 5pt;
+        text-align: right; }
+
+    // Button
+    .button {
+        margin: 5pt;
+        padding: 10pt;
+        border-radius: 50%;
+        display: inline-block;
+        transition: 0.2s ease-in-out;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 60% 60%;
+        background-image: url('resources/test.svg');
+        background-color: #eee;
+        &:hover { background-color: #ccc; }
+    }
+
+    // Darkmode setting
+    &.darkmode {
+        // Main stuff
+        background-color: black;
+        color: white;
+
+        // Darkmode button
+        .button {
+            background-image: url('resources/test-white.svg');
+            background-color: #333;
+            &:hover { background-color: #555; }
+        }
+    }
+
+    // Darkmode button
+    #button-darkmode {
+        background-image: url('resources/moon-phase-outline.svg'); }
+    &.darkmode #button-darkmode {
+        background-image: url('resources/moon-phase-outline-white.svg'); }
+
+    // Clear button
+    #button-clear {
+        background-image: url('resources/refresh-button.svg'); }
+    &.darkmode #button-clear {
+        background-image: url('resources/refresh-button-white.svg'); }
+}
