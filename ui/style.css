@@ -44,20 +44,20 @@
     background-color: #eee; }
 .button:hover { background-color: #ccc; }
 .button:active { background-color: #999; }
-.button.darkmode {
+#app.darkmode .button {
     background-image: url('resources/test-white.svg');
     background-color: #333; }
-.button.darkmode:hover { background-color: #555; }
-.button.darkmode:active { background-color: #999; }
+#app.darkmode .button:hover { background-color: #555; }
+#app.darkmode .button:active { background-color: #999; }
 
 /* Darkmode button */
 #button-darkmode {
     background-image: url('resources/moon-phase-outline.svg'); }
-#button-darkmode.darkmode {
+#app.darkmode #button-darkmode {
     background-image: url('resources/moon-phase-outline-white.svg'); }
 
 /* Clear button */
 #button-clear {
     background-image: url('resources/refresh-button.svg'); }
-#button-clear.darkmode {
+#app.darkmode #button-clear {
     background-image: url('resources/refresh-button-white.svg'); }

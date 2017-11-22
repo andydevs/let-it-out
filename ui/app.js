@@ -68,7 +68,5 @@ $(document).ready(() => {
     $('#button-darkmode').on('click', (event) => {
         console.log('#button-darkmode pressed')
         $('#app').toggleClass('darkmode')
-        $('#button-darkmode').toggleClass('darkmode')
-        $('#button-clear').toggleClass('darkmode')
     })
 })
