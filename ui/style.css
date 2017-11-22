@@ -18,7 +18,8 @@
     overflow-y: scroll;
     overflow-wrap: normal;
     padding: 10pt;
-    font-family: "Consolas", "Arial", sans-serif; }
+    font-family: "Consolas", "Arial", sans-serif;
+    transition: 0.2s ease-in-out; }
 #app.darkmode {
     background-color: black;
     color: white; }
@@ -41,14 +42,13 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 60% 60%;
-    background-color: #eee; }
+    background-color: #eee;
+    transition: 0.2s ease-in-out; }
 .button:hover { background-color: #ccc; }
-.button:active { background-color: #999; }
 #app.darkmode .button {
     background-image: url('resources/test-white.svg');
     background-color: #333; }
 #app.darkmode .button:hover { background-color: #555; }
-#app.darkmode .button:active { background-color: #999; }
 
 /* Darkmode button */
 #button-darkmode {
