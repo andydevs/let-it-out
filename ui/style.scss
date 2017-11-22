@@ -40,7 +40,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: 60% 60%;
-        background-image: url('resources/test.svg');
+        background-image: url('resources/icons/test.svg');
         background-color: #eee;
         &:hover { background-color: #ccc; }
     }
@@ -53,7 +53,7 @@
 
         // Darkmode button
         .button {
-            background-image: url('resources/test-white.svg');
+            background-image: url('resources/icons/test-white.svg');
             background-color: #333;
             &:hover { background-color: #555; }
         }
@@ -61,13 +61,13 @@
 
     // Darkmode button
     #button-darkmode {
-        background-image: url('resources/moon-phase-outline.svg'); }
+        background-image: url('resources/icons/moon-phase-outline.svg'); }
     &.darkmode #button-darkmode {
-        background-image: url('resources/moon-phase-outline-white.svg'); }
+        background-image: url('resources/icons/moon-phase-outline-white.svg'); }
 
     // Clear button
     #button-clear {
-        background-image: url('resources/refresh-button.svg'); }
+        background-image: url('resources/icons/refresh-button.svg'); }
     &.darkmode #button-clear {
-        background-image: url('resources/refresh-button-white.svg'); }
+        background-image: url('resources/icons/refresh-button-white.svg'); }
 }

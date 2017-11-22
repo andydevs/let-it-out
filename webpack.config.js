@@ -8,6 +8,7 @@
  * Created: 9 - 21 - 2017
  */
 // Imports
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 var webpack = require('webpack')
 var path = require('path')
 
@@ -37,5 +38,8 @@ module.exports = {
                 loader: 'url-loader'
             }
         ]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({template:'ui/resources/html/index.html'})
+    ]
 }

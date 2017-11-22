@@ -59,6 +59,3 @@ typings/
 
 # Remove build directory
 build/*
-!build/ui
-build/ui/*
-!build/ui/index.html
