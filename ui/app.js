@@ -59,6 +59,7 @@ $(document).ready(() => {
         $('<div id="toolbar"></div>')
             .append('<span class="button" id="button-darkmode"></span>')
             .append('<span class="button" id="button-clear"></span>'))
+            
     // Set toolbar handlers
     console.log('Set toolbar handlers')
     $('#button-clear').on('click', (event) => {
