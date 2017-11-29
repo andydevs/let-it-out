@@ -10,6 +10,7 @@
 // Imports
 import $ from 'jquery'
 import _ from 'lodash'
+import info from './resources/html/info.html'
 import './resources/style/main.scss'
 
 // Timing information
@@ -33,11 +34,30 @@ $(document).ready(() => {
             $('#app').trigger('backspace')
     })
 
+    // Append textbox
+    console.log('Append textbox...')
+    $('#app').append(
+        $('<div id="textbox"></div>')
+    )
+
+    // Append toolbar
+    console.log('Append toolbar...')
+    $('#app').append(
+        $('<div id="toolbar"></div>')
+            .append('<span class="button" id="button-darkmode"></span>')
+            .append('<span class="button" id="button-clear"></span>')
+            .append('<span class="button" id="button-info"></span>')
+    )
+
+    // Append info bar
+    console.log('Append infobar...')
+    $('#app').append($('<div id="info"></div>').append(info))
+
     // Set writechar handler for app
     console.log('Special handlers for #app')
     $('#app').on('writechar', (event, chr) => {
         console.log('#app writechar event: ' + chr)
-        $('#app').append(
+        $('#textbox').append(
             $(`<span class="char">${chr}</span>`)
                 .delay(FADE_DELAY)
                 .animate({opacity: 0}, FADE_TIME))
@@ -45,29 +65,27 @@ $(document).ready(() => {
     // Set backspace handler for app
     $('#app').on('backspace', (event) => {
         console.log('#app backspace event')
-        $('#app > .char:last-of-type').remove()
+        $('#textbox > .char:last-of-type').remove()
     })
     // Set clear handler for app
     $('#app').on('clear', (event) => {
         console.log('#app clear event')
-        $('#app > .char').remove()
+        $('#textbox > .char').remove()
     })
-
-    // Append toolbar
-    console.log('Append toolbar...')
-    $('#app').append(
-        $('<div id="toolbar"></div>')
-            .append('<span class="button" id="button-darkmode"></span>')
-            .append('<span class="button" id="button-clear"></span>'))
 
     // Set toolbar handlers
     console.log('Set toolbar handlers')
-    $('#button-clear').on('click', (event) => {
+    $('#button-clear').click((event) => {
         console.log('#button-clear pressed')
         $('#app').trigger('clear')
     })
-    $('#button-darkmode').on('click', (event) => {
+    $('#button-darkmode').click((event) => {
         console.log('#button-darkmode pressed')
         $('#app').toggleClass('darkmode')
+    })
+    $('#button-info').click((event) => {
+        console.log('#button-info pressed')
+        $('#info').fadeToggle()
+        $('#textbox').toggleClass('blurred')
     })
 })

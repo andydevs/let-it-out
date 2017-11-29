@@ -14,15 +14,44 @@
     left: 0;
     right: 0;
     bottom: 0;
-    overflow-y: scroll;
-    overflow-wrap: normal;
-    padding: 10pt;
     font-family: "Consolas", "Arial", sans-serif;
     transition: 0.2s ease-in-out;
 
+    // Textbox
+    #textbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-y: hidden;
+        overflow-wrap: normal;
+        padding: 10pt;
+        transition: 0.4s ease-in-out;
+        &.blurred { filter: blur(5px); }
+    }
+
+    // Info Panel
+    #info {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+        display: none;
+        padding: 5pt;
+
+        #credits {
+            * {
+                font-size: 8pt;
+                margin-bottom: 10pt;
+            }
+        }
+    }
+
     // Toolbar
-    > #toolbar {
-        position: absolute;
+    #toolbar {
+        position: fixed;
         bottom: 0;
         left: 0;
         right: 0;
@@ -40,7 +69,7 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: 60% 60%;
-        background-image: url('resources/icons/test.svg');
+        background-image: url('../icons/test.svg');
         background-color: #eee;
         &:hover { background-color: #ccc; }
     }
@@ -51,9 +80,16 @@
         background-color: black;
         color: white;
 
+        a {
+            color: #0af;
+            &:visited {
+                color: #f0a;
+            }
+        }
+
         // Darkmode button
         .button {
-            background-image: url('resources/icons/test-white.svg');
+            background-image: url('../icons/test-white.svg');
             background-color: #333;
             &:hover { background-color: #555; }
         }
@@ -61,13 +97,18 @@
 
     // Darkmode button
     #button-darkmode {
-        background-image: url('resources/icons/moon-phase-outline.svg'); }
+        background-image: url('../icons/moon-phase-outline.svg'); }
     &.darkmode #button-darkmode {
-        background-image: url('resources/icons/moon-phase-outline-white.svg'); }
+        background-image: url('../icons/moon-phase-outline-white.svg'); }
 
     // Clear button
     #button-clear {
-        background-image: url('resources/icons/refresh-button.svg'); }
+        background-image: url('../icons/refresh-button.svg'); }
     &.darkmode #button-clear {
-        background-image: url('resources/icons/refresh-button-white.svg'); }
+        background-image: url('../icons/refresh-button-white.svg'); }
+
+    #button-info {
+        background-image: url('../icons/info.svg'); }
+    &.darkmode #button-info {
+        background-image: url('../icons/info-white.svg'); }
 }
