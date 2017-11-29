@@ -10,7 +10,7 @@
 // Imports
 import $ from 'jquery'
 import _ from 'lodash'
-import './style.scss'
+import './resources/style/main.scss'
 
 // Timing information
 const FADE_DELAY = 180000
