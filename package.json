@@ -2,12 +2,10 @@
   "name": "let-it-out",
   "version": "1.0.0",
   "description": "A UI where you can write your words down and watch them fade away, disappearing from your mind.",
-  "main": "build/index.js",
+  "main": "webpack.config.js",
   "scripts": {
-    "build_ui": "./node_modules/.bin/webpack --progress",
-    "build_server": "./node_modules/.bin/babel server --out-dir build",
-    "build": "npm run build_server && npm run build_ui",
-    "start": "node build/index.js"
+    "webpack": "./node_modules/.bin/webpack --progress",
+    "devserver": "./node_modules/.bin/webpack-dev-server --watch --progress"
   },
   "keywords": [
     "anger",
@@ -19,7 +17,6 @@
   "author": "Anshul Kharbanda",
   "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
@@ -29,10 +26,10 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
-    "webpack": "^3.6.0"
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.5"
   },
   "dependencies": {
-    "express": "^4.15.4",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4"
   }

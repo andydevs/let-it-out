@@ -14,10 +14,10 @@ var path = require('path')
 
 // Exports
 module.exports = {
-    entry: './ui/app.js',
+    entry: './app/main.js',
     output: {
-        filename: 'bundle.js',
-        path: path.join(__dirname, 'build/ui')
+        path: path.join(__dirname, 'build'),
+        filename: 'bundle.js'
     },
     module: {
         rules: [
@@ -40,6 +40,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({template:'ui/resources/html/index.html'})
+        new HtmlWebpackPlugin({template:'app/resources/html/index.html'})
     ]
 }
