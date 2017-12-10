@@ -8,13 +8,13 @@
  * Created: 9 - 21 - 2017
  */
 // Imports
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var webpack = require('webpack')
-var path = require('path')
-var project = require('./project.json')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+const path = require('path')
+const project = require('./project.json')
 
 // Production environment
-var ENV = process.env.NODE_ENV || 'development'
+const ENV = process.env.NODE_ENV || 'development'
 
 // Exports
 module.exports = {
