@@ -24,26 +24,10 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /.jsx?$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader',
-                options: {
-                    presets: ['env']
-                }
-            },
-            {
-                test: /.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
-            },
-            {
-                test: /.svg$/,
-                loader: 'url-loader'
-            },
-            {
-                test: /.html$/,
-                loader: 'html-loader'
-            }
+            { test: /.jsx?$/, exclude: /node_modules/, use: 'babel-loader' },
+            { test: /.scss$/, use: ['style-loader','css-loader','sass-loader'] },
+            { test: /.svg$/, use: 'url-loader' },
+            { test: /.html$/, use: 'html-loader' }
         ]
     },
     plugins: [
