@@ -13,7 +13,7 @@ const webpack = require('webpack')
 const path = require('path')
 const project = require('./project.json')
 
-// Production environment
+// Environment variable
 const ENV = process.env.NODE_ENV || 'development'
 
 // Exports
