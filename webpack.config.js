@@ -11,6 +11,7 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var webpack = require('webpack')
 var path = require('path')
+var project = require('./project.json')
 
 // Production environment
 var ENV = process.env.NODE_ENV || 'development'
@@ -19,8 +20,9 @@ var ENV = process.env.NODE_ENV || 'development'
 module.exports = {
     entry: './app/main.js',
     output: {
+        filename: 'bundle.js',
         path: path.join(__dirname, 'build'),
-        filename: 'bundle.js'
+        publicPath: (ENV === 'production' ? `/${project.name}/` : '/')
     },
     module: {
         rules: [
@@ -34,8 +36,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: 'body',
             filename: 'index.html',
-            template:'app/resources/html/' + ENV + '.index.html',
-            chunks: []
+            template:'app/resources/html/index.html'
         })
     ]
 }
