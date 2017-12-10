@@ -12,6 +12,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var webpack = require('webpack')
 var path = require('path')
 
+// Production environment
+var ENV = process.env.NODE_ENV || 'development'
+
 // Exports
 module.exports = {
     entry: './app/main.js',
@@ -47,7 +50,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             inject: 'body',
             filename: 'index.html',
-            template:'app/resources/html/dev.index.html',
+            template:'app/resources/html/' + ENV + '.index.html',
             chunks: []
         })
     ]
