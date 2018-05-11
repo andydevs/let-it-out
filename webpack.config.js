@@ -11,7 +11,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const path = require('path')
-const project = require('./project.json')
+const project = require('./package.json')
 
 // Environment variable
 const ENV = process.env.BUILD_ENV || 'development'
