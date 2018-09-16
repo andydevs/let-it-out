@@ -14,7 +14,7 @@ import info from './resources/html/info.html'
 import './resources/style/main.scss'
 
 // Timing information
-const FADE_DELAY = 180000
+const FADE_DELAY = 5000
 const FADE_TIME  = 2000
 
 // Word information
@@ -24,20 +24,18 @@ const BCKSP = 'Backspace'
 
 // Add handlers
 $(document).ready(() => {
-    // Set document keydown handler
-    console.log('Document keydown handler')
-    $(document).on('keydown', (event) => {
-        console.log('#app keydown event')
-        if (_.includes(CHARS, event.key))
-            $('#app').trigger('writechar', [event.key])
-        else if (event.key === BCKSP)
-            $('#app').trigger('backspace')
-    })
-
     // Append textbox
     console.log('Append textbox...')
     $('#app').append(
-        $('<div id="textbox"></div>')
+        $('<div id="textbox" contenteditable></div>')
+            .on('keydown', event => {
+                event.preventDefault()
+                console.log('#textbox keydown event')
+                if (_.includes(CHARS, event.key))
+                    $('#textbox').trigger('writechar', [event.key])
+                else if (event.key === BCKSP)
+                    $('#textbox').trigger('backspace')
+            })
     )
 
     // Append toolbar
@@ -50,12 +48,12 @@ $(document).ready(() => {
     )
 
     // Append info bar
-    console.log('Append infobar...')
+    console.log('Append info panel...')
     $('#app').append($('<div id="info"></div>').append(info))
 
     // Set writechar handler for app
     console.log('Special handlers for #app')
-    $('#app').on('writechar', (event, chr) => {
+    $('#textbox').on('writechar', (event, chr) => {
         console.log('#app writechar event: ' + chr)
         $('#textbox').append(
             $(`<span class="char">${chr}</span>`)
@@ -63,12 +61,12 @@ $(document).ready(() => {
                 .animate({opacity: 0}, FADE_TIME))
     })
     // Set backspace handler for app
-    $('#app').on('backspace', (event) => {
+    $('#textbox').on('backspace', (event) => {
         console.log('#app backspace event')
         $('#textbox > .char:last-of-type').remove()
     })
     // Set clear handler for app
-    $('#app').on('clear', (event) => {
+    $('#textbox').on('clear', (event) => {
         console.log('#app clear event')
         $('#textbox > .char').remove()
     })
