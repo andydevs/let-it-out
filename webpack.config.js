@@ -8,10 +8,11 @@
  * Created: 9 - 21 - 2017
  */
 // Imports
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const path = require('path')
-const project = require('./package.json')
+const package = require('./package.json')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ProvidePlugin = webpack.ProvidePlugin
 
 // Environment variable
 const ENV = process.env.BUILD_ENV || 'development'
@@ -22,7 +23,7 @@ module.exports = {
     output: {
         filename: 'bundle.js',
         path: path.join(__dirname, 'build'),
-        publicPath: (ENV === 'production' ? `/${project.name}/` : '/')
+        publicPath: (ENV === 'production' ? `/${package.name}/` : '/')
     },
     module: {
         rules: [
@@ -37,6 +38,11 @@ module.exports = {
             inject: 'body',
             filename: 'index.html',
             template:'app/resources/html/index.html'
+        }),
+        new ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            _: 'lodash'
         })
     ]
 }

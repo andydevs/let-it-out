@@ -8,8 +8,6 @@
  * Created: 9 - 21 - 2017
  */
 // Imports
-import $ from 'jquery'
-import _ from 'lodash'
 import info from './resources/html/info.html'
 import './resources/style/main.scss'
 
