@@ -106,48 +106,12 @@ var BCKSP = 'Backspace';
 
 // Add handlers
 (0, _jquery2.default)(document).ready(function () {
-    // Set document keydown handler
-    console.log('Document keydown handler');
-    (0, _jquery2.default)(document).on('keydown', function (event) {
-        console.log('#app keydown event');
-        if (_lodash2.default.includes(CHARS, event.key)) (0, _jquery2.default)('#app').trigger('writechar', [event.key]);else if (event.key === BCKSP) (0, _jquery2.default)('#app').trigger('backspace');
-    });
-
-    // Append textbox
-    console.log('Append textbox...');
-    (0, _jquery2.default)('#app').append((0, _jquery2.default)('<div id="textbox"></div>'));
-
-    // Append toolbar
-    console.log('Append toolbar...');
-    (0, _jquery2.default)('#app').append((0, _jquery2.default)('<div id="toolbar"></div>').append('<span class="button" id="button-darkmode"></span>').append('<span class="button" id="button-clear"></span>').append('<span class="button" id="button-info"></span>'));
-
     // Append info bar
-    console.log('Append infobar...');
-    (0, _jquery2.default)('#app').append((0, _jquery2.default)('<div id="info"></div>').append(_info2.default));
-
-    // Set writechar handler for app
-    console.log('Special handlers for #app');
-    (0, _jquery2.default)('#app').on('writechar', function (event, chr) {
-        console.log('#app writechar event: ' + chr);
-        (0, _jquery2.default)('#textbox').append((0, _jquery2.default)('<span class="char">' + chr + '</span>').delay(FADE_DELAY).animate({ opacity: 0 }, FADE_TIME));
-    });
-    // Set backspace handler for app
-    (0, _jquery2.default)('#app').on('backspace', function (event) {
-        console.log('#app backspace event');
-        (0, _jquery2.default)('#textbox > .char:last-of-type').remove();
-    });
-    // Set clear handler for app
-    (0, _jquery2.default)('#app').on('clear', function (event) {
-        console.log('#app clear event');
-        (0, _jquery2.default)('#textbox > .char').remove();
-    });
+    console.log('Append info html...');
+    (0, _jquery2.default)('<div id="info"></div>').append(_info2.default);
 
     // Set toolbar handlers
     console.log('Set toolbar handlers');
-    (0, _jquery2.default)('#button-clear').click(function (event) {
-        console.log('#button-clear pressed');
-        (0, _jquery2.default)('#app').trigger('clear');
-    });
     (0, _jquery2.default)('#button-darkmode').click(function (event) {
         console.log('#button-darkmode pressed');
         (0, _jquery2.default)('#app').toggleClass('darkmode');
@@ -27747,7 +27711,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "/**\n * Let It Out\n *\n * A UI where you can write your words down and watch them fade away,\n * dissappearing from your mind.\n *\n * Author:  Anshul Kharbanda\n * Created: 9 - 21 - 2017\n */\n#app {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  font-family: \"Consolas\", \"Arial\", sans-serif;\n  transition: 0.2s ease-in-out; }\n  #app #textbox {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    overflow-y: hidden;\n    overflow-wrap: normal;\n    padding: 10pt;\n    transition: 0.4s ease-in-out; }\n    #app #textbox.blurred {\n      filter: blur(5px); }\n  #app #info {\n    position: fixed;\n    top: 0;\n    left: 50%;\n    transform: translateX(-50%);\n    z-index: 1;\n    display: none;\n    padding: 5pt; }\n    #app #info #credits * {\n      font-size: 8pt;\n      margin-bottom: 10pt; }\n  #app #toolbar {\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    z-index: 1;\n    padding: 5pt;\n    text-align: right; }\n  #app .button {\n    margin: 5pt;\n    padding: 10pt;\n    border-radius: 50%;\n    display: inline-block;\n    transition: 0.2s ease-in-out;\n    background-repeat: no-repeat;\n    background-position: center;\n    background-size: 60% 60%;\n    background-image: url(" + escape(__webpack_require__(10)) + ");\n    background-color: #eee; }\n    #app .button:hover {\n      background-color: #ccc; }\n  #app.darkmode {\n    background-color: black;\n    color: white; }\n    #app.darkmode a {\n      color: #0af; }\n      #app.darkmode a:visited {\n        color: #f0a; }\n    #app.darkmode .button {\n      background-image: url(" + escape(__webpack_require__(11)) + ");\n      background-color: #333; }\n      #app.darkmode .button:hover {\n        background-color: #555; }\n  #app #button-darkmode {\n    background-image: url(" + escape(__webpack_require__(12)) + "); }\n  #app.darkmode #button-darkmode {\n    background-image: url(" + escape(__webpack_require__(13)) + "); }\n  #app #button-clear {\n    background-image: url(" + escape(__webpack_require__(14)) + "); }\n  #app.darkmode #button-clear {\n    background-image: url(" + escape(__webpack_require__(15)) + "); }\n  #app #button-info {\n    background-image: url(" + escape(__webpack_require__(16)) + "); }\n  #app.darkmode #button-info {\n    background-image: url(" + escape(__webpack_require__(17)) + "); }\n", ""]);
+exports.push([module.i, "/**\n * Let It Out\n *\n * A UI where you can write your words down and watch them fade away,\n * dissappearing from your mind.\n *\n * Author:  Anshul Kharbanda\n * Created: 9 - 21 - 2017\n */\n#app {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  font-family: \"Consolas\", \"Arial\", sans-serif;\n  transition: 0.2s ease-in-out; }\n  #app #textbox {\n    position: fixed;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    border: none;\n    resize: none;\n    overflow-y: hidden;\n    overflow-wrap: break-word;\n    padding: 10pt;\n    transition: 0.4s ease-in-out; }\n    #app #textbox.blurred {\n      filter: blur(5px); }\n    #app #textbox:focus {\n      outline: none; }\n  #app #info {\n    position: fixed;\n    top: 0;\n    left: 50%;\n    transform: translateX(-50%);\n    z-index: 1;\n    display: none;\n    padding: 5pt; }\n    #app #info #credits * {\n      font-size: 8pt;\n      margin-bottom: 10pt; }\n  #app #toolbar {\n    position: fixed;\n    bottom: 0;\n    left: 0;\n    right: 0;\n    z-index: 1;\n    padding: 5pt;\n    text-align: right; }\n  #app .button {\n    margin: 5pt;\n    padding: 10pt;\n    border-radius: 50%;\n    display: inline-block;\n    transition: 0.2s ease-in-out;\n    background-repeat: no-repeat;\n    background-position: center;\n    background-size: 60% 60%;\n    background-image: url(" + escape(__webpack_require__(10)) + ");\n    background-color: #eee; }\n    #app .button:hover {\n      background-color: #ccc; }\n  #app.darkmode {\n    background-color: black;\n    color: white; }\n    #app.darkmode a {\n      color: #0af; }\n      #app.darkmode a:visited {\n        color: #f0a; }\n    #app.darkmode .button {\n      background-image: url(" + escape(__webpack_require__(11)) + ");\n      background-color: #333; }\n      #app.darkmode .button:hover {\n        background-color: #555; }\n  #app #button-darkmode {\n    background-image: url(" + escape(__webpack_require__(12)) + "); }\n  #app.darkmode #button-darkmode {\n    background-image: url(" + escape(__webpack_require__(13)) + "); }\n  #app #button-clear {\n    background-image: url(" + escape(__webpack_require__(14)) + "); }\n  #app.darkmode #button-clear {\n    background-image: url(" + escape(__webpack_require__(15)) + "); }\n  #app #button-info {\n    background-image: url(" + escape(__webpack_require__(16)) + "); }\n  #app.darkmode #button-info {\n    background-image: url(" + escape(__webpack_require__(17)) + "); }\n", ""]);
 
 // exports
 
