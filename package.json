@@ -1,6 +1,6 @@
 {
   "name": "let-it-out",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A UI where you can write your words down and watch them fade away, disappearing from your mind.",
   "main": "webpack.config.js",
   "scripts": {
