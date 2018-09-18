@@ -30,6 +30,8 @@
         overflow-wrap: break-word;
         padding: 10pt;
         transition: 0.4s ease-in-out;
+        color: transparent;
+        text-shadow: 0 0 0 black;
         &.blurred { filter: blur(5px); }
         &:focus { outline: none; }
     }

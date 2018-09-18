@@ -28,7 +28,7 @@
             // on keypress
             this.on('keydown', event => {
                 // If is a char
-                console.log(event.key);
+                event.preventDefault()
                 if (_.includes(CHARS, event.key)) {
                     this.trigger('char', event.key)
                 } else if (BCKSP === event.key) {

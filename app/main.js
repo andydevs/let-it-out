@@ -32,7 +32,7 @@ $(document).ready(() => {
     $('#info').append(info)
 
     // Set toolbar handlers
-    console.log('Set toolbar handlers')
+    console.log('Set toolbar handlers...')
     $('#button-darkmode').click((event) => {
         console.log('#button-darkmode pressed')
         $('#app').toggleClass('darkmode')
