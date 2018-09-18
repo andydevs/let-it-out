@@ -9,7 +9,7 @@
  */
 (function ($) {
     // Timing information
-    const FADE_DELAY = 2000
+    const FADE_DELAY = 180000
     const FADE_TIME  = 2000
 
     // Word information
