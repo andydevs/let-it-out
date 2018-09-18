@@ -24,11 +24,12 @@ const BCKSP = 'Backspace'
 // Add handlers
 $(document).ready(() => {
     // Set up textbox
+    console.log('Configure textbox...');
     $('#textbox').textbox()
 
     // Append info bar
     console.log('Append info html...')
-    $('<div id="info"></div>').append(info)
+    $('#info').append(info)
 
     // Set toolbar handlers
     console.log('Set toolbar handlers')
