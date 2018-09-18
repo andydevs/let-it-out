@@ -10472,11 +10472,12 @@ var BCKSP = 'Backspace';
 // Add handlers
 $(document).ready(function () {
     // Set up textbox
+    console.log('Configure textbox...');
     $('#textbox').textbox();
 
     // Append info bar
     console.log('Append info html...');
-    $('<div id="info"></div>').append(_info2.default);
+    $('#info').append(_info2.default);
 
     // Set toolbar handlers
     console.log('Set toolbar handlers');
