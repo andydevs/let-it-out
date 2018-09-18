@@ -34,11 +34,12 @@ $(document).ready(() => {
     // Set toolbar handlers
     console.log('Set toolbar handlers...')
     $('#button-darkmode').click((event) => {
-        console.log('#button-darkmode pressed')
         $('#app').toggleClass('darkmode')
     })
+    $('#button-clear').click(event => {
+        $('#textbox').trigger('clear')
+    })
     $('#button-info').click((event) => {
-        console.log('#button-info pressed')
         $('#info').fadeToggle()
         $('#textbox').toggleClass('blurred')
     })

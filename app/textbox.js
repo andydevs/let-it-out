@@ -50,6 +50,12 @@
                 this.find('.char:last-of-type').remove()
             })
 
+            // On clear
+            this.on('clear', event => {
+                this.find('.char').remove()
+            })
+
+            // Return this
             return this
         }
 
