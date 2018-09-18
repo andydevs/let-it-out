@@ -10,6 +10,7 @@
 // Imports
 import info from './resources/html/info.html'
 import './resources/style/main.scss'
+import './textbox'
 
 // Timing information
 const FADE_DELAY = 180000
@@ -22,6 +23,9 @@ const BCKSP = 'Backspace'
 
 // Add handlers
 $(document).ready(() => {
+    // Set up textbox
+    $('#textbox').textbox()
+
     // Append info bar
     console.log('Append info html...')
     $('<div id="info"></div>').append(info)
