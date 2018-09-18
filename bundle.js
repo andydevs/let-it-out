@@ -10482,11 +10482,12 @@ $(document).ready(function () {
     // Set toolbar handlers
     console.log('Set toolbar handlers...');
     $('#button-darkmode').click(function (event) {
-        console.log('#button-darkmode pressed');
         $('#app').toggleClass('darkmode');
     });
+    $('#button-clear').click(function (event) {
+        $('#textbox').trigger('clear');
+    });
     $('#button-info').click(function (event) {
-        console.log('#button-info pressed');
         $('#info').fadeToggle();
         $('#textbox').toggleClass('blurred');
     });
@@ -11169,7 +11170,7 @@ module.exports = function (css) {
  */
 (function ($) {
     // Timing information
-    var FADE_DELAY = 2000;
+    var FADE_DELAY = 180000;
     var FADE_TIME = 2000;
 
     // Word information
@@ -11206,6 +11207,12 @@ module.exports = function (css) {
                 _this.find('.char:last-of-type').remove();
             });
 
+            // On clear
+            this.on('clear', function (event) {
+                _this.find('.char').remove();
+            });
+
+            // Return this
             return this;
         }
     });
